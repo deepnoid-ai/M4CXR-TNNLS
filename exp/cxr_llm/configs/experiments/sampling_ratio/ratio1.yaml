@@ -1,0 +1,3 @@
+dataset:
+  common_config:
+    sampling_weights: uniform

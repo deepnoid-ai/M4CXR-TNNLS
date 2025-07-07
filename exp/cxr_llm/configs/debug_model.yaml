@@ -1,0 +1,51 @@
+model:
+  debug: True # use gpt2 model
+
+  # load model through from_pretrained
+  pretrained_ckpt: null
+
+  # load adpater file
+  adapter_ckpt: null
+
+  dtype: torch.float32
+
+  module_to_update: [abstractor]
+
+  model_config:
+    vision_config:
+      encoder_type: dinov2
+      pretrained_vision_name_or_path: "microsoft/rad-dino"
+      # encoder_type: openai.clip
+      # pretrained_vision_name_or_path: "openai/clip-vit-large-patch14-336"
+
+    lm_config:
+      pretrained_lm_name_or_path: "mistralai/Mistral-7B-Instruct-v0.2"
+      pretrained_tokenizer_name_or_path: "mistralai/Mistral-7B-Instruct-v0.2"
+
+    projector_config:
+      projector_type: c-abs
+      depth: 3
+      mlp_depth: 2
+      hidden_size: 1024
+      num_eos_tokens: 0
+      pos_emb: True
+      feature_layer_index: -1 # vision feature layer index; -1: last layer
+      prenorm: False # if True, LN is applied to vision features
+      num_query_tokens: 16
+
+  tokenizer_cfg:
+    num_visual_tokens: 16
+    chat_template: mistral
+
+  lora_config:
+    use_lora: True
+    target_modules: '.*language_model.*\.(q_proj|v_proj)'
+    inference_mode: False
+    lora_r: 8
+    lora_alpha: 32
+    lora_dropout: 0.05
+
+  # site-packages/transformers/generation/configuration_utils.py, GenerationConfig
+  generate_config:
+    max_new_tokens: 500
+    do_sample: False

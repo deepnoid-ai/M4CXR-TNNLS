@@ -1,0 +1,43 @@
+dataset:
+  mimicvqa_vqa:
+    class_name: MimicVqaDataset
+    train: MIMIC-CXR-VQA/train.json
+    eval: MIMIC-CXR-VQA/valid.json
+    test: MIMIC-CXR-VQA/test.json
+    mimic_cxr_test: MIMIC-CXR/preprocess/v9.2/study_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: vqa
+
+  mimiccxr_diff_vqa:
+    class_name: MimiccxrDiffVqaDataset
+    train: medical-diff-vqa-a-large-scale-medical-dataset-for-difference-visual-question-answering-on-chest-x-ray-images-1.0.0/preprocess/v1.0/vqa_train.json
+    eval: medical-diff-vqa-a-large-scale-medical-dataset-for-difference-visual-question-answering-on-chest-x-ray-images-1.0.0/preprocess/v1.0/vqa_eval.json
+    test: medical-diff-vqa-a-large-scale-medical-dataset-for-difference-visual-question-answering-on-chest-x-ray-images-1.0.0/preprocess/v1.0/vqa_test.json
+    mimic_cxr_test: MIMIC-CXR/preprocess/v9.2/study_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: vqa
+
+  mimiccxr_diff_vqa_difference:
+    class_name: MimiccxrDiffVqaDataset
+    train: medical-diff-vqa-a-large-scale-medical-dataset-for-difference-visual-question-answering-on-chest-x-ray-images-1.0.0/preprocess/v1.0/difference_train.json
+    eval: medical-diff-vqa-a-large-scale-medical-dataset-for-difference-visual-question-answering-on-chest-x-ray-images-1.0.0/preprocess/v1.0/difference_eval.json
+    test: medical-diff-vqa-a-large-scale-medical-dataset-for-difference-visual-question-answering-on-chest-x-ray-images-1.0.0/preprocess/v1.0/difference_test.json
+    mimic_cxr_test: MIMIC-CXR/preprocess/v9.2/study_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: diff
+
+  radialog:
+    class_name: RadialogDataset
+    train: physionet.org/files/radialog-instruct-dataset/1.1.0/mimic_cxr_instruct_llava_v2.json
+    eval: physionet.org/files/radialog-instruct-dataset/1.1.0/mimic_cxr_instruct_llava_v2.json
+    test: physionet.org/files/radialog-instruct-dataset/1.1.0/mimic_cxr_instruct_llava_v2.json
+    mimic_cxr_train: MIMIC-CXR/preprocess/v9.2/study_level/train.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+
+  slake:
+    class_name: SlakeDataset
+    train: null
+    eval: null
+    test: Slake1.0/test.json
+    task_type: vqa
+    answer_type: closed

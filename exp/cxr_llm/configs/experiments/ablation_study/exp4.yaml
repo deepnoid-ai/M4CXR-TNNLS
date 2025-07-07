@@ -1,0 +1,111 @@
+dataset:
+  train_dataset:
+    [
+      mimiccxr_single_image_cot_prompting,
+      mimiccxr_multi_image_cot_prompting,
+      mimiccxr_multi_study_cot_prompting,
+      brax_multi_disease,
+      chexpert_multi_disease,
+      vinbig_multi_disease,
+      nih_multi_disease,
+      chestx_det_multi_disease,
+      siim_multi_disease,
+      rsna_multi_disease,
+      covid19_multi_disease,
+      vinbig_loc_f_ground,
+      nih_loc_f_ground,
+      chestx_det_loc_f_ground,
+      jsrt_loc_f_ground,
+      siim_loc_f_ground,
+      rsna_loc_f_ground,
+      covid_qu_loc_f_ground,
+      qata_loc_f_ground,
+      vinbig_loc_grounded_f,
+      chestx_det_loc_grounded_f,
+      jsrt_loc_grounded_f,
+      siim_loc_grounded_f,
+      rsna_loc_grounded_f,
+      covid_qu_loc_grounded_f,
+      qata_loc_grounded_f,
+      vinbig_loc_abn_det,
+      chestx_det_loc_abn_det,
+      jsrt_loc_abn_det,
+      siim_loc_abn_det,
+      rsna_loc_abn_det,
+      covid_qu_loc_abn_det,
+      qata_loc_abn_det,
+      nih_loc_mf_ground,
+      vinbig_loc_mf_ground,
+      chestx_det_loc_mf_ground,
+      covid19_loc_o_ground,
+      covid_qu_loc_o_ground,
+      covid19_loc_grounded_o,
+      covid_qu_loc_grounded_o,
+      mscxr_grounded_p,
+      imagenome_grounded_p,
+      mscxr_p_ground,
+      imagenome_p_ground,
+      imagenome_a_ground,
+      imagenome_grounded_a,
+    ]
+  eval_dataset:
+    [
+      mimiccxr_single_image_cot_prompting,
+      mimiccxr_multi_image_cot_prompting,
+      mimiccxr_multi_study_cot_prompting,
+      mimiccxr_single_image_multi_classification,
+      mscxr_p_ground,
+      mscxr_grounded_p,
+    ]
+  test_dataset: [mimiccxr_single_image_cot_prompting, mscxr_p_ground]
+
+  common_config:
+    max_length: 4095
+    sampling_weights: [
+        200.0, # mimiccxr_single_image_cot_prompting,
+        120.0, # mimiccxr_multi_image_cot_prompting,
+        60.0, # mimiccxr_multi_study_cot_prompting,
+        7.0, # brax_multi_disease
+        30.0, # chexpert_multi_disease
+        3.0, # vinbig_multi_disease
+        10.0, # nih_multi_disease
+        1.0, # chestx_det_multi_disease
+        4.0, # siim_multi_disease
+        4.0, # rsna_multi_disease
+        3.0, # covid19_multi_disease
+        2.0, # vinbig_loc_f_ground
+        10.0, # nih_loc_f_ground
+        2.0, # chestx_det_loc_f_ground
+        0.1, # jsrt_loc_f_ground
+        4.0, # siim_loc_f_ground
+        1.0, # rsna_loc_f_ground
+        1.0, # covid_qu_loc_f_ground
+        1.0, # qata_loc_f_ground
+        2.0, # vinbig_loc_grounded_f
+        2.0, # chestx_det_loc_grounded_f
+        0.1, # jsrt_loc_grounded_f
+        2.0, # siim_loc_grounded_f
+        1.0, # rsna_loc_grounded_f
+        1.0, # covid_qu_loc_grounded_f
+        3.0, # qata_loc_grounded_f
+        3.0, # vinbig_loc_abn_det
+        1.5, # chestx_det_loc_abn_det
+        0.1, # jsrt_loc_abn_det
+        2.0, # siim_loc_abn_det
+        1.0, # rsna_loc_abn_det
+        1.5, # covid_qu_loc_abn_det
+        1.5, # qata_loc_abn_det
+        10.0, # nih_loc_mf_ground
+        2.0, # vinbig_loc_mf_ground
+        2.0, # chestx_det_loc_mf_ground
+        0.8, # covid19_loc_o_ground
+        0.8, # covid_qu_loc_o_ground
+        0.8, # covid19_loc_grounded_o
+        0.8, # covid_qu_loc_grounded_o
+        2.0, # mscxr_grounded_p
+        40.0, # imagenome_grounded_p
+        2.0, # mscxr_p_ground
+        40.0, # imagenome_p_ground
+        20.0, # imagenome_a_ground
+        20.0, # imagenome_grounded_a
+      ]

@@ -1,0 +1,5 @@
+train:
+  bf16: True
+  bf16_full_eval: True
+model:
+  dtype: torch.bfloat16

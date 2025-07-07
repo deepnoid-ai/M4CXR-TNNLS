@@ -1,0 +1,50 @@
+train:
+  learning_rate: 1e-4
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 2
+  gradient_checkpointing: False
+  ddp_find_unused_parameters: True
+  gradient_checkpointing_kwargs: { "use_reentrant": False }
+  dataloader_num_workers: 2
+  weight_decay: 0.0001
+  max_grad_norm: 1.0
+  evaluation_strategy: steps
+  eval_steps: 1000
+  save_strategy: steps
+  save_steps: 1000
+  max_steps: 10000
+  fp16: True
+  save_total_limit: null
+  metric_for_best_model: eval_loss
+  greater_is_better: False
+  load_best_model_at_end: True
+  lr_scheduler_type: cosine
+  warmup_steps: 500
+  logging_steps: 1
+  label_names: ["labels"]
+  report_to: wandb
+  remove_unused_columns: False
+  seed: 42
+  full_determinism: False # ensuring reproducible results in distributed training. Important: this will negatively impact the performance, so only use it for debugging.
+  dispatch_batches: False
+  ignore_data_skip: True
+experiment:
+  project: cxr_llm # wandb project name
+  name: dev
+  user: debug
+  output_root_dir: null
+  early_stopping_patience: 20
+  resume_from_checkpoint: False
+dataset:
+  data_root: null
+  common_config:
+    max_length: 1023
+    resize_type: shortest_edge
+    template_name: default_template
+    # configs for MultiDataset (train)
+    sampling_weights: uniform
+    force_one_per_dataset: False
+    # batch_per_device: 256
+model: null
+deepspeed: null

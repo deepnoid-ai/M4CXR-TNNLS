@@ -1,0 +1,70 @@
+dataset:
+  mimiccxr_single_image_report_only:
+    class_name: MimiccxrSingleImageDataset
+    train: MIMIC-CXR/preprocess/v9.2/dicom_level/train.json
+    eval: MIMIC-CXR/preprocess/v9.2/dicom_level/validate.json
+    test: MIMIC-CXR/preprocess/v9.2/dicom_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: report_only
+
+  mimiccxr_single_image_single_turn_mrg:
+    class_name: MimiccxrSingleImageDataset
+    train: MIMIC-CXR/preprocess/v9.2/dicom_level/train.json
+    eval: MIMIC-CXR/preprocess/v9.2/dicom_level/validate.json
+    test: MIMIC-CXR/preprocess/v9.2/dicom_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: mrg
+
+  mimiccxr_single_image_cot_prompting:
+    class_name: MimiccxrSingleImageDataset
+    train: MIMIC-CXR/preprocess/v9.2/dicom_level/train.json
+    eval: MIMIC-CXR/preprocess/v9.2/dicom_level/validate.json
+    test: MIMIC-CXR/preprocess/v9.2/dicom_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: cot
+
+  mimiccxr_single_image_multi_classification:
+    class_name: MimiccxrSingleImageDataset
+    train: MIMIC-CXR/preprocess/v9.2/dicom_level/train.json
+    eval: MIMIC-CXR/preprocess/v9.2/dicom_level/validate.json
+    test: MIMIC-CXR/preprocess/v9.2/dicom_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: multi_disease
+
+  mimiccxr_multi_image_single_turn_mrg:
+    class_name: MimiccxrMultiImageDataset
+    train: MIMIC-CXR/preprocess/v9.2/study_level/train.json
+    eval: MIMIC-CXR/preprocess/v9.2/study_level/validate.json
+    test: MIMIC-CXR/preprocess/v9.2/study_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: frontal_lateral
+    max_image_per_data: 5
+
+  mimiccxr_multi_image_cot_prompting:
+    class_name: MimiccxrMultiImageDataset
+    train: MIMIC-CXR/preprocess/v9.2/study_level/train.json
+    eval: MIMIC-CXR/preprocess/v9.2/study_level/validate.json
+    test: MIMIC-CXR/preprocess/v9.2/study_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: frontal_lateral_cot
+    max_image_per_data: 5
+
+  mimiccxr_multi_study_single_turn_mrg:
+    class_name: MimiccxrMultiStudyDataset
+    train: MIMIC-CXR/preprocess/v9.2/subject_level/train.json
+    eval: MIMIC-CXR/preprocess/v9.2/subject_level/validate.json
+    test: MIMIC-CXR/preprocess/v9.2/subject_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: history
+    max_image_per_data: 10
+    history_legnth: 2
+
+  mimiccxr_multi_study_cot_prompting:
+    class_name: MimiccxrMultiStudyDataset
+    train: MIMIC-CXR/preprocess/v9.2/subject_level/train.json
+    eval: MIMIC-CXR/preprocess/v9.2/subject_level/validate.json
+    test: MIMIC-CXR/preprocess/v9.2/subject_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: history_cot
+    max_image_per_data: 10
+    history_legnth: 2

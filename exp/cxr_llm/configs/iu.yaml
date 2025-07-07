@@ -1,0 +1,339 @@
+dataset:
+  # multi disease classification
+  brax_multi_disease:
+    class_name: DiseaseClassificationDataset
+    train: physionet.org/files/brax/1.1.0/preprocess/v2.0/brax_input.json
+    eval: null
+    test: null
+    task_type: multi_disease
+
+  chexpert_multi_disease:
+    class_name: DiseaseClassificationDataset
+    train: CheXpert-v1.0/preprocess/v1.0/chexpert_train_input.json
+    eval: CheXpert-v1.0/preprocess/v1.0/chexpert_valid_input.json
+    test: null
+    task_type: multi_disease
+
+  vinbig_multi_disease:
+    class_name: DiseaseClassificationDataset
+    train: VinBigData/preprocess/v1.0/vinbig_input.json
+    eval: null
+    test: null
+    task_type: multi_disease
+
+  nih_multi_disease:
+    class_name: DiseaseClassificationDataset
+    train: NIH/preprocess/v0.0/train_eval_input.json
+    eval: null
+    test: NIH/preprocess/v0.0/test_input.json
+    task_type: multi_disease
+
+  chestx_det_multi_disease:
+    class_name: DiseaseClassificationDataset
+    train: chestX-Det10/preprocess/v0.0/input.json
+    eval: null
+    test: null
+    task_type: multi_disease
+
+  siim_multi_disease:
+    class_name: DiseaseClassificationDataset
+    train: SIIM/preprocess/v0.0/siim_input.json
+    eval: null
+    test: null
+    task_type: multi_disease
+
+  rsna_multi_disease:
+    class_name: DiseaseClassificationDataset
+    train: RSNA-pneumonia/preprocess/v2.0/input.json
+    eval: null
+    test: null
+    task_type: multi_disease
+
+  covid19_multi_disease:
+    class_name: DiseaseClassificationDataset
+    train: COVID-19_Radiography_Dataset/preprocess/v0.0/input.json
+    eval: null
+    test: null
+    task_type: multi_disease
+
+  # finding grounding
+  vinbig_loc_f_ground:
+    class_name: FindingGroundingDataset
+    train: VinBigData/preprocess/v1.0/vinbig_input.json
+    eval: null
+    test: null
+    task_type: f_ground
+    shuffle_multi_turn: True
+
+  nih_loc_f_ground:
+    class_name: FindingGroundingDataset
+    train: NIH/preprocess/v0.0/train_eval_input.json
+    eval: null
+    test: NIH/preprocess/v0.0/test_input.json
+    task_type: f_ground
+    shuffle_multi_turn: True
+
+  chestx_det_loc_f_ground:
+    class_name: FindingGroundingDataset
+    train: chestX-Det10/preprocess/v0.0/input.json
+    eval: null
+    test: null
+    task_type: f_ground
+    shuffle_multi_turn: True
+
+  jsrt_loc_f_ground:
+    class_name: FindingGroundingDataset
+    train: jsrt/preprocess/v0.0/jsrt_input.json
+    eval: null
+    test: null
+    task_type: f_ground
+    shuffle_multi_turn: True
+
+  siim_loc_f_ground:
+    class_name: FindingGroundingDataset
+    train: SIIM/preprocess/v0.0/siim_input.json
+    eval: null
+    test: null
+    task_type: f_ground
+    shuffle_multi_turn: True
+
+  rsna_loc_f_ground:
+    class_name: FindingGroundingDataset
+    train: RSNA-pneumonia/preprocess/v2.0/input.json
+    eval: null
+    test: null
+    task_type: f_ground
+    shuffle_multi_turn: True
+
+  covid_qu_loc_f_ground:
+    class_name: FindingGroundingDataset
+    train: COVID-QU-Ex/preprocess/v0.0/input_train.json
+    eval: COVID-QU-Ex/preprocess/v0.0/input_eval.json
+    test: COVID-QU-Ex/preprocess/v0.0/input_test.json
+    task_type: f_ground
+    shuffle_multi_turn: True
+
+  qata_loc_f_ground:
+    class_name: FindingGroundingDataset
+    train: QaTa-COV19/preprocess/v0.0/train_input.json
+    eval: null
+    test: QaTa-COV19/preprocess/v0.0/test_input.json
+    task_type: f_ground
+    shuffle_multi_turn: True
+
+  # grounded finding
+  vinbig_loc_grounded_f:
+    class_name: GroundedFindingDataset
+    train: VinBigData/preprocess/v1.0/vinbig_input.json
+    eval: null
+    test: null
+    task_type: grounded_f
+    shuffle_multi_turn: True
+
+  chestx_det_loc_grounded_f:
+    class_name: GroundedFindingDataset
+    train: chestX-Det10/preprocess/v0.0/input.json
+    eval: null
+    test: null
+    task_type: grounded_f
+    shuffle_multi_turn: True
+
+  jsrt_loc_grounded_f:
+    class_name: GroundedFindingDataset
+    train: jsrt/preprocess/v0.0/jsrt_input.json
+    eval: null
+    test: null
+    task_type: grounded_f
+    shuffle_multi_turn: True
+
+  siim_loc_grounded_f:
+    class_name: GroundedFindingDataset
+    train: SIIM/preprocess/v0.0/siim_input.json
+    eval: null
+    test: null
+    task_type: grounded_f
+    shuffle_multi_turn: True
+
+  rsna_loc_grounded_f:
+    class_name: GroundedFindingDataset
+    train: RSNA-pneumonia/preprocess/v2.0/input.json
+    eval: null
+    test: null
+    task_type: grounded_f
+    shuffle_multi_turn: True
+
+  covid_qu_loc_grounded_f:
+    class_name: GroundedFindingDataset
+    train: COVID-QU-Ex/preprocess/v0.0/input_train.json
+    eval: COVID-QU-Ex/preprocess/v0.0/input_eval.json
+    test: COVID-QU-Ex/preprocess/v0.0/input_test.json
+    task_type: grounded_f
+    shuffle_multi_turn: True
+
+  qata_loc_grounded_f:
+    class_name: GroundedFindingDataset
+    train: QaTa-COV19/preprocess/v0.0/train_input.json
+    eval: null
+    test: QaTa-COV19/preprocess/v0.0/test_input.json
+    task_type: grounded_f
+    shuffle_multi_turn: True
+  
+  # abnormality detection
+  vinbig_loc_abn_det:
+    class_name: AbnormalityDetectionDataset
+    train: VinBigData/preprocess/v1.0/vinbig_input.json
+    eval: null
+    test: null
+    task_type: abn_det
+
+  chestx_det_loc_abn_det:
+    class_name: AbnormalityDetectionDataset
+    train: chestX-Det10/preprocess/v0.0/input.json
+    eval: null
+    test: null
+    task_type: abn_det
+
+  jsrt_loc_abn_det:
+    class_name: AbnormalityDetectionDataset
+    train: jsrt/preprocess/v0.0/jsrt_input.json
+    eval: null
+    test: null
+    task_type: abn_det
+
+  siim_loc_abn_det:
+    class_name: AbnormalityDetectionDataset
+    train: SIIM/preprocess/v0.0/siim_input.json
+    eval: null
+    test: null
+    task_type: abn_det
+
+  rsna_loc_abn_det:
+    class_name: AbnormalityDetectionDataset
+    train: RSNA-pneumonia/preprocess/v2.0/input.json
+    eval: null
+    test: null
+    task_type: abn_det
+
+  covid_qu_loc_abn_det:
+    class_name: AbnormalityDetectionDataset
+    train: COVID-QU-Ex/preprocess/v0.0/input_train.json
+    eval: COVID-QU-Ex/preprocess/v0.0/input_eval.json
+    test: COVID-QU-Ex/preprocess/v0.0/input_test.json
+    task_type: abn_det
+
+  qata_loc_abn_det:
+    class_name: AbnormalityDetectionDataset
+    train: QaTa-COV19/preprocess/v0.0/train_input.json
+    eval: null
+    test: QaTa-COV19/preprocess/v0.0/test_input.json
+    task_type: abn_det
+  
+  # multi finding grounding
+  nih_loc_mf_ground:
+    class_name: MultiFindingGroundingDataset
+    train: NIH/preprocess/v0.0/train_eval_input.json
+    eval: null
+    test: NIH/preprocess/v0.0/test_input.json
+    task_type: mf_ground
+
+  vinbig_loc_mf_ground:
+    class_name: MultiFindingGroundingDataset
+    train: VinBigData/preprocess/v1.0/vinbig_input.json
+    eval: null
+    test: null
+    task_type: mf_ground
+  
+  chestx_det_loc_mf_ground:
+    class_name: MultiFindingGroundingDataset
+    train: chestX-Det10/preprocess/v0.0/input.json
+    eval: null
+    test: null
+    task_type: mf_ground
+
+  # organ grounding
+  covid19_loc_o_ground:
+    class_name: OrganGroundingDataset
+    train: COVID-19_Radiography_Dataset/preprocess/v0.0/input.json
+    eval: null
+    test: null
+    task_type: o_ground
+
+  covid_qu_loc_o_ground:
+    class_name: OrganGroundingDataset
+    train: COVID-QU-Ex/preprocess/v0.0/input_train.json
+    eval: COVID-QU-Ex/preprocess/v0.0/input_eval.json
+    test: COVID-QU-Ex/preprocess/v0.0/input_test.json
+    task_type: o_ground
+
+  # grounded organ
+  covid19_loc_grounded_o:
+    class_name: GroundedOrganDataset
+    train: COVID-19_Radiography_Dataset/preprocess/v0.0/input.json
+    eval: null
+    test: null
+    task_type: grounded_o
+
+  covid_qu_loc_grounded_o:
+    class_name: GroundedOrganDataset
+    train: COVID-QU-Ex/preprocess/v0.0/input_train.json
+    eval: COVID-QU-Ex/preprocess/v0.0/input_eval.json
+    test: COVID-QU-Ex/preprocess/v0.0/input_test.json
+    task_type: grounded_o
+
+  # grounded phrase
+  mscxr_grounded_p:
+    class_name: MscxrDataset
+    train: MS-CXR-0.1/preprocess/v2.0/train.json
+    eval: MS-CXR-0.1/preprocess/v2.0/val.json
+    test: MS-CXR-0.1/preprocess/v2.0/test.json
+    task_type: grounded_p
+
+  imagenome_grounded_p:
+    class_name: ImagenomeDataset
+    train: chest-imagenome-dataset-1.0.0/preprocess/v2.0/train.json
+    eval: chest-imagenome-dataset-1.0.0/preprocess/v2.0/valid.json
+    test: chest-imagenome-dataset-1.0.0/preprocess/v2.0/test.json
+    mimic_cxr_test: MIMIC-CXR/preprocess/v9.2/study_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: grounded_p
+    shuffle_multi_turn: True
+
+  # phrase grounding
+  mscxr_p_ground:
+    class_name: MscxrDataset
+    train: MS-CXR-0.1/preprocess/v2.0/train.json
+    eval: MS-CXR-0.1/preprocess/v2.0/val.json
+    test: MS-CXR-0.1/preprocess/v2.0/test.json
+    task_type: p_ground
+
+  imagenome_p_ground:
+    class_name: ImagenomeDataset
+    train: chest-imagenome-dataset-1.0.0/preprocess/v2.0/train.json
+    eval: chest-imagenome-dataset-1.0.0/preprocess/v2.0/valid.json
+    test: chest-imagenome-dataset-1.0.0/preprocess/v2.0/test.json
+    mimic_cxr_test: MIMIC-CXR/preprocess/v9.2/study_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: p_ground
+    shuffle_multi_turn: True
+
+  # anatomical grounding
+  imagenome_a_ground:
+    class_name: ImagenomeDataset
+    train: chest-imagenome-dataset-1.0.0/preprocess/v2.0/train.json
+    eval: chest-imagenome-dataset-1.0.0/preprocess/v2.0/valid.json
+    test: chest-imagenome-dataset-1.0.0/preprocess/v2.0/test.json
+    mimic_cxr_test: MIMIC-CXR/preprocess/v9.2/study_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    task_type: a_ground
+    shuffle_multi_turn: True
+
+  # grounded anatomical
+  imagenome_grounded_a:
+    class_name: ImagenomeDataset
+    train: chest-imagenome-dataset-1.0.0/preprocess/v2.0/train.json
+    eval: chest-imagenome-dataset-1.0.0/preprocess/v2.0/valid.json
+    test: chest-imagenome-dataset-1.0.0/preprocess/v2.0/test.json
+    task_type: grounded_a
+    mimic_cxr_test: MIMIC-CXR/preprocess/v9.2/study_level/test.json
+    mscxr_duplicate: MS-CXR-0.1/MS_CXR_Local_Alignment_v1.0.0.csv
+    shuffle_multi_turn: True

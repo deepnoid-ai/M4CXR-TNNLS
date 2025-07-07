@@ -1,0 +1,5 @@
+experiment:
+  output_root_dir: experiments_root_directory
+
+dataset:
+  data_root: datasets_root_directory

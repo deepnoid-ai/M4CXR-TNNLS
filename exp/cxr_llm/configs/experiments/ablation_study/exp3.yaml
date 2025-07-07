@@ -1,0 +1,31 @@
+dataset:
+  train_dataset:
+    [
+      mimiccxr_single_image_cot_prompting,
+      mimiccxr_multi_image_cot_prompting,
+      mimiccxr_multi_study_cot_prompting,
+      mimicvqa_vqa,
+      mimiccxr_diff_vqa,
+      mimiccxr_diff_vqa_difference,
+      radialog,
+    ]
+  eval_dataset:
+    [
+      mimiccxr_single_image_cot_prompting,
+      mimiccxr_multi_image_cot_prompting,
+      mimiccxr_multi_study_cot_prompting,
+      mimiccxr_single_image_multi_classification,
+    ]
+  test_dataset: [mimiccxr_single_image_cot_prompting]
+
+  common_config:
+    max_length: 4095
+    sampling_weights: [
+        200.0, # mimiccxr_single_image_cot_prompting,
+        120.0, # mimiccxr_multi_image_cot_prompting,
+        60.0, # mimiccxr_multi_study_cot_prompting,
+        2.0, # mimicvqa_vqa
+        2.0, # mimiccxr_diff_vqa
+        4.0, # mimiccxr_diff_vqa_difference
+        70.0, # radialog
+      ]

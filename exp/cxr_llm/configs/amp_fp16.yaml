@@ -1,0 +1,3 @@
+train:
+  fp16: True
+  fp16_full_eval: True

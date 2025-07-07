@@ -1,1 +1,21 @@
-# M4CXR-TNNLS
+# M4CXR: Exploring Multi-task Potentials of Multi-modal Large Language Models for Chest X-ray Interpretation
+
+### Environment
+```bash
+pip install -r requirements.txt
+```
+
+### Data Preparation
+Download datasets and preprocess with codes.
+(TBA)
+
+### Pretraining
+```bash
+PYTHONPATH=. torchrun --nproc_per_node=2 --nnodes=1 exp/cxr_llm/run.py --add_cfg_list mrg amp_bf16 pre_training_abstractor paths
+```
+
+### Visual instruction tuning
+
+```bash
+PYTHONPATH=. torchrun --nproc_per_node=2 --nnodes=1 exp/cxr_llm/run.py --add_cfg_list mrg iu vqa amp_bf16 instruction_tuning paths
+```
